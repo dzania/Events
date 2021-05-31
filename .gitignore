@@ -1,2 +1,6 @@
 venv/
+core/__pycache__
+core/__init__.py
+events/__pycache__
+events/__init__.py
 .env
