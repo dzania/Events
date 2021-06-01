@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  margin: 0%;
+}
+.navbar {
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.navbar .navbar-super {
+  text-decoration: none;
+}
+.navbar .navbar-brand {
+  font-size: 3rem;
+  text-decoration: none;
+  font-family: "Pacifico", cursive;
+  color: black;
+  transition: 0.6s;
+}
+.navbar .navbar-brand:hover {
+  color: orangered;
+}
+.navbar-nav .nav-item a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  transition: 0.5s;
+}
+/*.navbar-nav .nav-item a:hover {*/
+  /*color: orangered;*/
+  /*border-bottom: 1px solid orangered;*/
+/*}*/
+.navbar-nav .nav-item::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  color: orangered;
+  background: orangered;
+  transition: width 0.3s;
+}
+.navbar-nav .nav-item:hover::after {
+    width: 100%;
+}
