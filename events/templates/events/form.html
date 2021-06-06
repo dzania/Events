@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+<style>
+  h2 {
+    margin: auto;
+    text-align: center;
+    padding: 25px;
+  }
+</style>
+<div class="container form-container">
+  <h2>Dodaj wydarzenie</h2>
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="card">
+      <div class="card-body">
+        <form class="row g-3" action="" method="post">
+          {% csrf_token %}
+          <div class="col-md-6">{{form.image|as_crispy_field}}</div>
+          <div class="col-md-4">{{form.organizer|as_crispy_field}}</div>
+          <div class="col-md-4">{{form.title|as_crispy_field}}</div>
+          <div class="col-md-4">{{form.location|as_crispy_field}}</div>
+          <div class="col-md-2">{{form.price|as_crispy_field}}</div>
+          <div class="col-md-4">{{form.start_time|as_crispy_field}}</div>
+          <div class="col-md-4">{{form.start_date|as_crispy_field}}</div>
+          <div class="col-md-4">{{form.end_date|as_crispy_field}}</div>
+          <div class="col-md-12">{{form.description|as_crispy_field}}</div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Dodaj</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

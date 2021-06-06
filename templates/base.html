@@ -29,7 +29,7 @@
     <header>
       <nav class="navbar navbar-light navbar-super navbar-expand-lg">
         <div class="d-flex flex-grow-1">
-          <a class="navbar-brand" href="#">Events</a>
+          <a class="navbar-brand" href="{% url 'index' %}">Events</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -40,14 +40,18 @@
           </button>
         </div>
         <div class="collapse navbar-collapse flex-grow-1 text-right" id="data">
-            <ul class="navbar-nav ml-auto flex-nowrap">
-              <li class="nav-item">
-                <a href="#" class="nav-link">Wydarzenia</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Dodaj wydarzenie </a>
-              </li>
-            </ul>
+          <ul class="navbar-nav ml-auto flex-nowrap">
+            {% comment %}
+            <li class="nav-item">
+              {% endcomment %} {% comment %}<a href="#" class="nav-link"
+                >Wydarzenia</a
+              >{% endcomment %} {% comment %}
+            </li>
+            {% endcomment %}
+            <li class="nav-item">
+              <a href="{% url 'add' %}" class="nav-link">Dodaj wydarzenie </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>

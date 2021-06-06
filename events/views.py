@@ -10,7 +10,7 @@ def add_event(request):
         if form.is_valid():
             form.save()
             messages.success(request,"Event created successfully")
-        return HttpResponseRedirect('')
+        return HttpResponseRedirect('events/index.html')
     else:
         form = EventForm()
     return render(request,"events/form.html",{"form":form})
