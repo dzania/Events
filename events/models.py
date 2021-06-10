@@ -9,9 +9,9 @@ class Event(models.Model):
     description = models.TextField()
     start_time = models.TimeField(auto_now=False,auto_now_add=False,default = timezone.now)
     start_date = models.DateField(blank=False)
-    end_date = models.DateField(blank=True)
+    end_date = models.DateField(blank=True,null=True)
     location = models.CharField(max_length=100)
-    price = models.IntegerField(blank=True)
+    price = models.IntegerField(blank=True,null=True)
     published = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

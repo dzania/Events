@@ -8,6 +8,21 @@
 </style>
 <div class="container form-container">
   <h2>Dodaj wydarzenie</h2>
+  {% if messages %} {% for message in messages %}
+  <div class="container-fluid p-0">
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+      {{ message }}
+    </div>
+  </div>
+  {% endfor %} {% endif %}
   <div class="shadow-lg p-3 mb-5 bg-white rounded">
     <div class="card">
       <div class="card-body">
@@ -24,6 +39,12 @@
           <div class="col-md-12">{{form.description|as_crispy_field}}</div>
           <div class="col-12">
             <button class="btn btn-primary" type="submit">Dodaj</button>
+            <a
+                href="{% url 'index' %}"
+              class="btn btn-secondary ml-auto"
+              role="button"
+              >Powrót</a
+            >
           </div>
         </form>
       </div>

@@ -8,27 +8,29 @@ body {
 .navbar {
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.navbar-light .navbar-brand {
+.navbar-light .navbar-item {
   font-size: 3rem;
   text-decoration: none;
-  font-family: "Pacifico", cursive;
   color: black;
+  font-family: "Pacifico", cursive;
+  transition: 0.5s;
 }
-.navbar-light .navbar-brand:focus,
-.navbar-light .navbar-brand:hover {
+.navbar-light .navbar-item:hover{
   color: orangered;
 }
 
-.navbar-nav .nav-item {
+.navbar-nav .nav-item a {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 25px;
   text-decoration: none;
   color: black;
-  opacity: 0.9;
+  opacity: 0.7;
   transition: 0.5s;
 }
-
+.navbar-nav .nav-item a:hover {
+  opacity: 1;
+}
 .navbar-nav .nav-item::after {
   content: "";
   display: block;
