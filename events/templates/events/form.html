@@ -5,6 +5,9 @@
     text-align: center;
     padding: 25px;
   }
+  .card {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3);
+  }
 </style>
 <div class="container form-container">
   <h2>Dodaj wydarzenie</h2>
@@ -23,32 +26,37 @@
     </div>
   </div>
   {% endfor %} {% endif %}
-  <div class="shadow-lg p-3 mb-5 bg-white rounded">
-    <div class="card">
-      <div class="card-body">
-        <form class="row g-3" action="" method="post">
-          {% csrf_token %}
-          <div class="col-md-6">{{form.image|as_crispy_field}}</div>
-          <div class="col-md-4">{{form.organizer|as_crispy_field}}</div>
-          <div class="col-md-4">{{form.title|as_crispy_field}}</div>
-          <div class="col-md-4">{{form.location|as_crispy_field}}</div>
-          <div class="col-md-2">{{form.price|as_crispy_field}}</div>
-          <div class="col-md-4">{{form.start_time|as_crispy_field}}</div>
-          <div class="col-md-4">{{form.start_date|as_crispy_field}}</div>
-          <div class="col-md-4">{{form.end_date|as_crispy_field}}</div>
-          <div class="col-md-12">{{form.description|as_crispy_field}}</div>
-          <div class="col-12">
-            <button class="btn btn-primary" type="submit">Dodaj</button>
-            <a
-                href="{% url 'index' %}"
-              class="btn btn-secondary ml-auto"
-              role="button"
-              >Powrót</a
-            >
-          </div>
-        </form>
-      </div>
+  <div class="card">
+    <div class="card-body">
+      <form class="row g-3" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="col-md-6">{{form.image|as_crispy_field}}</div>
+        <div class="col-md-4">{{form.organizer|as_crispy_field}}</div>
+        <div class="col-md-4">{{form.title|as_crispy_field}}</div>
+        <div class="col-md-4">{{form.location|as_crispy_field}}</div>
+        <div class="col-md-1">{{form.price|as_crispy_field}}</div>
+        <div class="col-md-4">{{form.start_time|as_crispy_field}}</div>
+        <div class="col-md-4" id="startDate">
+          {{form.start_date|as_crispy_field}}
+        </div>
+        <div class="col-md-4">{{form.end_date|as_crispy_field}}</div>
+        <div class="col-md-12">{{form.description|as_crispy_field}}</div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Dodaj</button>
+          <a
+            href="{% url 'index' %}"
+            class="btn btn-secondary ml-auto"
+            role="button"
+            >Powrót</a
+          >
+        </div>
+      </form>
     </div>
   </div>
 </div>
+<script>
+  $(function () {
+    $("#startDate").datetimepicker();
+  });
+</script>
 {% endblock %}

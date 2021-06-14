@@ -3,7 +3,7 @@ from django.utils import timezone
 
 # Create your models here.
 class Event(models.Model):
-    image = models.ImageField(upload_to='upload',null=True,blank=True)
+    image = models.ImageField(upload_to='upload/',null=True,blank=True,default='images/blank.jpg')
     organizer = models.CharField(max_length=50)
     title = models.CharField(max_length=80)
     description = models.TextField()

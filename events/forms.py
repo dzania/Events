@@ -17,7 +17,7 @@ class EventForm(ModelForm):
             'price':'Cena',
         }
         widgets = {
-            'start_time': widgets.TimeInput(attrs={'type':'time'},format='%H:%M'),
-            'start_date': widgets.DateInput(attrs={'type': 'date'}),
-            'end_date': widgets.DateInput(attrs={'type': 'date'})
+        'start_time': widgets.TimeInput(attrs={'type':'time'},format='%H:%M'),
+        'start_date': widgets.DateTimeInput(attrs={'type': 'date'},format='%H:%M'),
+        'end_date': widgets.DateInput(attrs={'type': 'date'})
         }
