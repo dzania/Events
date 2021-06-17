@@ -7,9 +7,14 @@
   }
   .card {
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 15px 15px 15px 15px;
     transition: transform 0.2s ease;
+    height: 30rem;
+  }
+  .card-text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-word;
   }
   .card-img-top {
     width: 100%;
@@ -17,21 +22,19 @@
     object-fit: cover;
   }
   .card:hover {
-    box-shadow: 0 8px 8px 0 rgba(255,69,0,0.5);
+    box-shadow: 0 8px 8px 0 rgba(255, 69, 0, 0.5);
     transform: scale(1.1);
   }
-  .card a{
+  .card a {
     text-decoration: none;
     transition: transform 0.3s ease;
     color: black;
   }
-  .card a:hover{
-    color: orangered;
-  }
+
 </style>
 <h1>Zakończone wydarzenia</h1>
 <div class="container-fluid">
-  <div class="row">
+  <div class="row justify-content-center">
     {% for event in passed_events %}
     <div class="col-auto">
       <div class="card" style="width: 18rem">
@@ -41,12 +44,14 @@
             src="{{ event.image.url }}"
             alt="Card image"
           />
-        <div class="card-header">Data wydarzenia: {{event.start_date}}</div>
-        <div class="card-body">
-          <h4 class="card-title">{{ event.title }}</h4>
-          <p class="card-text">{{ event.description|slice:":200" }}</p>
+          <div class="card-header">Data wydarzenia: {{event.start_date}}</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ event.title }}</h5>
+            <p class="card-text text-truncate">
+              {{ event.description|safe|slice:":100" }}
+            </p>
+          </div>
         </a>
-        </div>
       </div>
     </div>
     {% endfor %}

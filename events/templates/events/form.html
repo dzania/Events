@@ -28,8 +28,13 @@
   {% endfor %} {% endif %}
   <div class="card">
     <div class="card-body">
-      <form class="row g-3" action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+      <form
+        class="row g-3"
+        action=""
+        method="post"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %} {{form.media}}
         <div class="col-md-6">{{form.image|as_crispy_field}}</div>
         <div class="col-md-4">{{form.organizer|as_crispy_field}}</div>
         <div class="col-md-4">{{form.title|as_crispy_field}}</div>
@@ -54,9 +59,5 @@
     </div>
   </div>
 </div>
-<script>
-  $(function () {
-    $("#startDate").datetimepicker();
-  });
-</script>
+
 {% endblock %}

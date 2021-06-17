@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'events.apps.EventsConfig',
     'crispy_forms',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

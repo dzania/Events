@@ -5,7 +5,6 @@ from .forms import EventForm
 from .models import Event
 from django.urls import reverse
 from django.utils import timezone
-from django.views.generic import DeleteView
 # main page view to show only upcoming events
 def index(request):
     now = timezone.now()
