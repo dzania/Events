@@ -32,6 +32,12 @@
 </style>
 <h1>Nadchodzące wydarzenia</h1>
 <div class="container-fluid">
+  <form method="GET" class="form-inline justify-content-center">
+    {{myFilter.form}}
+    <button class="btn btn-primary" type="submit">Szukaj</button>
+  </form>
+</div>
+<div class="container-fluid">
   <div class="row justify-content-center">
     {% for event in events %}
     <div class="col-auto">

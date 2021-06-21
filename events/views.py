@@ -3,13 +3,18 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import EventForm
 from .models import Event
+from .filters import EventFilter
 from django.urls import reverse
 from django.utils import timezone
 # main page view to show only upcoming events
 def index(request):
     now = timezone.now()
     events = Event.objects.filter(start_date__gt=now).order_by('start_date')
-    return render(request,'events/index.html',{'events': events})
+    
+    myFilter = EventFilter(request.GET,queryset=events)
+    events = myFilter.qs
+
+    return render(request,'events/index.html',{'events': events, "myFilter": myFilter})
 
 #view for adding events form
 def add_event(request):

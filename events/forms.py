@@ -7,7 +7,7 @@ class EventForm(ModelForm):
         exclude = ['published']
         labels = {
             'image':'Zdjęcie',
-            'organizer':'Organizator',
+            'category':'Kategoria',
             'title':'Nazwa',
             'description':'Opis',
             'start_time':'Godzina rozpoczęcia',
