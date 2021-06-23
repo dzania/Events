@@ -35,7 +35,11 @@ def add_event(request):
 def archive(request):
     now = timezone.now()
     passed_events = Event.objects.filter(start_date__lt=now).order_by('-start_date')
-    return render(request,"events/archive.html",{'passed_events':passed_events})
+
+    myFilter = EventFilter(request.GET, queryset=passed_events)
+    passed_events = myFilter.qs
+
+    return render(request,"events/archive.html",{'passed_events':passed_events,"myFilter":myFilter})
 
 def event_detail(request,pk):
     event = get_object_or_404(Event,pk=pk)

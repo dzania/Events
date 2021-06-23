@@ -11,7 +11,7 @@
     transition: transform 0.2s ease;
     height: 30rem;
   }
-  .card-text{
+  .card-text {
     text-overflow: ellipsis;
     overflow: hidden;
     word-break: break-word;
@@ -30,9 +30,35 @@
     transition: transform 0.3s ease;
     color: black;
   }
-
+  label {
+    padding-left: 15px;
+  }
+  h6 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+  }
 </style>
 <h1>Zakończone wydarzenia</h1>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="card" style="height: 8rem; width: 70%">
+      <div class="card-body">
+        <h6 class="card-title">Filtruj wydarzenia</h6>
+        <form method="GET" class="form-inline justify-content-center">
+          <label for="category">Kategoria:</label>
+          <div class="col-md-1">{{myFilter.form.category}}</div>
+          <label for="start_date">Wydarzenia później niż:</label>
+          <div class="col-md-2">{{myFilter.form.start_date}}</div>
+          <label for="end_date">Wydarzenia wcześniej niż:</label>
+          <div class="col-md-2">{{myFilter.form.end_date}}</div>
+          <div class="col-auto">
+            <button class="btn btn-primary" type="submit">Szukaj</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
   <div class="row justify-content-center">
     {% for event in passed_events %}
