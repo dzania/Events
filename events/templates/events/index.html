@@ -11,7 +11,7 @@
     transition: transform 0.3s ease;
     height: 30rem;
   }
-  .card .card-text{
+  .card .card-text p{
     overflow: hidden;
   }
 
@@ -73,7 +73,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ event.title }}</h5>
             <p class="card-text text-truncate">
-              {{ event.description|safe|slice:":100" }}
+              {{ event.description|safe|slice:":150" }}...
             </p>
           </div>
         </a>
