@@ -9,12 +9,13 @@
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 15px 15px 15px 15px;
     transition: transform 0.3s ease;
-    height: 30rem;
+    height: 28rem;
   }
-  .card .card-text p{
+  .card-text {
+    white-space: nowrap;
     overflow: hidden;
+    word-wrap: break-word;
   }
-
   .card-img-top {
     width: 100%;
     height: 20vh;
@@ -40,7 +41,7 @@
 <h1>Nadchodzące wydarzenia</h1>
 <div class="container-fluid">
   <div class="row justify-content-center">
-    <div class="card" style="height: 8rem; width: 70%">
+    <div class="card" style="height: 8rem; width: 75%">
       <div class="card-body">
         <h6 class="card-title">Filtruj wydarzenia</h6>
         <form method="GET" class="form-inline justify-content-center">
@@ -70,10 +71,18 @@
             alt="Card image"
           />
           <div class="card-header">Data wydarzenia: {{event.start_date}}</div>
-          <div class="card-body">
+          <div class="card-body" style="overflow-y: auto">
             <h5 class="card-title">{{ event.title }}</h5>
-            <p class="card-text text-truncate">
-              {{ event.description|safe|slice:":150" }}...
+            <p
+              class="description card-text text-truncate"
+              style="font-size: 15px"
+            >
+              <i class="far fa-money-bill-alt"></i>
+              Cena: {{event.price}},-zł<br />
+              <i class="far fa-clock"></i>
+              Godzina Rozpoczęczia: {{event.start_time}}<br />
+              <i class="fas fa-map-marker-alt"></i>
+              {{event.location}}
             </p>
           </div>
         </a>
