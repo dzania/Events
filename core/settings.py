@@ -147,7 +147,6 @@ MESSAGE_TAGS = {
 
 CKEDITOR_CONFIGS = {
 'default': {
-    'toolbar': None, #You can change this based on your requirements.
     'width': 'auto',
 
           },

@@ -1,4 +1,3 @@
-from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import EventForm
@@ -6,6 +5,7 @@ from .models import Event
 from .filters import EventFilter
 from django.urls import reverse
 from django.utils import timezone
+
 # main page view to show only upcoming events
 def index(request):
     now = timezone.now()
@@ -41,9 +41,11 @@ def archive(request):
 
     return render(request,"events/archive.html",{'passed_events':passed_events,"myFilter":myFilter})
 
+#detail event view
 def event_detail(request,pk):
     event = get_object_or_404(Event,pk=pk)
     return render(request, 'events/event_detail.html',{'event':event})
+
 
 def delete_event(request,pk):
     event = get_object_or_404(Event,pk=pk)

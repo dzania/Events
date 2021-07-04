@@ -31,11 +31,13 @@
       <div class="card-body">
         <h2 class="card-title">{{event.title}}</h2>
         <h6 class="card-subtitle mb-2 text-muted">Cena: {{event.price}},-zł</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Organizator: {{event.organizer}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Miejsce: {{event.location}}</h6>
         <h6 class="card-subtitle mb-2 text-muted">
           Godzina rozpoczęcia: {{event.start_time}}
         </h6>
         <h6 class="card-subtitle mb-2 text-muted">
-          Data rozpoczęcia: {{event.start_date}}&nbsp;&nbsp;&nbsp;&nbsp;Data
+          Data rozpoczęcia: {{event.start_date}}<br>Data
           zakończenia: {{event.end_date}}
         </h6>
         <p class="card-text">{{ event.description|safe }}</p>

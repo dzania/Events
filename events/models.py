@@ -13,6 +13,7 @@ class Event(models.Model):
         )
     image = models.ImageField(upload_to='upload/',null=True,blank=True,default='images/blank.jpg')
     category = models.CharField(max_length=50,blank=False,choices=category_choices)
+    organizer = models.CharField(max_length=50)
     title = models.CharField(max_length=80)
     description = RichTextField(blank=False)
     start_time = models.TimeField(auto_now=False,auto_now_add=False,default = timezone.now)

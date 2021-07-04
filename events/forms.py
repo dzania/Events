@@ -8,6 +8,7 @@ class EventForm(ModelForm):
         labels = {
             'image':'Zdjęcie',
             'category':'Kategoria',
+            'organizer':'Organizator',
             'title':'Nazwa',
             'description':'Opis',
             'start_time':'Godzina rozpoczęcia',

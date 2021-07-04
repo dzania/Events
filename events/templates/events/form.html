@@ -35,8 +35,9 @@
         enctype="multipart/form-data"
       >
         {% csrf_token %} {{form.media}}
-        <div class="col-md-6">{{form.image|as_crispy_field}}</div>
+        <div class="col-md-4">{{form.image|as_crispy_field}}</div>
         <div class="col-md-4">{{form.category|as_crispy_field}}</div>
+        <div class="col-md-3">{{form.organizer|as_crispy_field}}</div>
         <div class="col-md-4">{{form.title|as_crispy_field}}</div>
         <div class="col-md-4">{{form.location|as_crispy_field}}</div>
         <div class="col-md-2">{{form.price|as_crispy_field}}</div>

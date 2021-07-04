@@ -1,6 +1,5 @@
 import django_filters
 from django_filters import DateFilter
-from django.forms import DateField, widgets
 from .models import Event
 
 class EventFilter(django_filters.FilterSet):
